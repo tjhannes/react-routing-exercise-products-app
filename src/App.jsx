@@ -2,6 +2,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import ProductMen from "./pages/ProductMen";
+import ProductWomen from "./pages/ProductWomen";
+import Warenkorb from "./pages/Warenkorb";
+import ProductDetail from "./pages/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -15,12 +18,20 @@ const router = createBrowserRouter([
   /* create the path for women */
   /* ... */
   {
+    path: "/women",
+    element: <ProductWomen />,
+  },
+  {
     path: "/warenkorb",
-    element: <Home />,
+    element: <Warenkorb />,
     /* create the page Warenkorb and call it for /warenkorb */
   },
   /* create the path for product detail */
   /* ... */
+  {
+    path: "/product/:id",
+    element: <ProductDetail />,
+  },
 ]);
 
 function App() {
