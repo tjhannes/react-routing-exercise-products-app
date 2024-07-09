@@ -18,7 +18,8 @@ export default function ProductList({ apiEndpoint }) {
   return (
     <>
       <p>Warenkorb Anzahl Produkte: {warenkorb.length}</p>
-      <p>Preis: </p>
+      <p>Preis: {price}</p>
+      <p>Marken: Nike, Puma, ... (HOMEWORK)</p>
       {products.map((product) => (
         /* The code is used both at ProductMen and ProductWomen */
         /* Refactor this code into a component */
@@ -26,6 +27,7 @@ export default function ProductList({ apiEndpoint }) {
           product={product}
           key={product.id}
           setWarenkorb={setWarenkorb}
+          setPrice={setPrice}
         />
       ))}
     </>
