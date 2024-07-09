@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import ProductCard from "./ProductCard";
 import axios from "axios";
 import { useEffect } from "react";
 import { useState } from "react";
+import WarenkorbProvider, {
+  WarenkorbContext,
+} from "../context/WarenkorbContext";
 
 export default function ProductList({ apiEndpoint }) {
   const [products, setProducts] = useState([]);
-  const [warenkorb, setWarenkorb] = useState([]);
+  const { warenkorb, setWarenkorb } = useContext(WarenkorbContext);
   const [price, setPrice] = useState(0);
 
   useEffect(() => {
